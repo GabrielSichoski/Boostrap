@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <title>Document</title>
+    <style>
+        img {
+            text-align: center;
+        }
+
+        .card {
+            border-radius: 8px;
+            padding: 10px;
+            width: 350px;
+            height: 350px;
+            text-align: center;
+            margin: 25px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 5px 15px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .active-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Batman Brinquedo</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-hover">
+                    <div class="row mt-3">
+                        <div class="col-md-3 item1">
+                            <div class="card-body" style="border: 1px solid #ccc;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 8px 8px rgba(0, 0, 0, 0.1);">
+                                <img src="imagens/batman.png" width="300" height="300" alt="Brinquedo" />
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8">
+                            <div class="card-body" style="background-color: #55acee; border: 1px solid #ccc;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                <h2>Detalhes do produto</h2>
+                                <p style="background-color: white;" class="card-text">Presenteie seu filho, com os brinquedos da loja de brinquedos online </p>
+                            </div>
+                        </div>
+                        <ul class="nav nav-underline">
+                            <li class="nav-item">
+                                <a class="nav-link Video" aria-current="page" href="#">Videos</a>
+                            </li>
+                            <li class="nav-item Foto">
+                                <a class="nav-link" href="#">Fotos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link Comentario" href="#">Comentarios</a>
+                            </li>
+                        </ul>
+                        <!-- Conteúdo dos vídeos -->
+                        <div class="col-9 content" id="videos">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/z1jI7C_oqxs?si=9CV1wo_KVNLS9Qe8"
+                                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <!-- Conteúdo das fotos -->
+                        <div class="col-9 content" id="foto">
+                            <div>
+                                <div class="container">
+                                  <div class="card" style=".card {
+                                    border-radius: 8px;
+                                    padding: 10px;
+                                    width: 330px;
+                                    height: 330px;
+                                    text-align: center;
+                                    margin: 25px;
+                                }">
+                                        
+                                                                  <img src="imagens/batman.png" alt="Batman" width="300" height="300">
+                                  </div>
+                                  <div class="card"style=".card {
+                                    border-radius: 8px;
+                                    padding: 10px;
+                                    width: 330px;
+                                    height: 330px;
+                                    text-align: center;
+                                    margin: 25px;
+                                }">>
+                                      
+                                                                      <img src="imagens/coringa.webp" alt="Coringa" width="300" height="300">
+                                  </div>
+                                  <div class="card" style=".card {
+                                    border-radius: 8px;
+                                    padding: 10px;
+                                    width: 330px;
+                                    height: 330px;
+                                    text-align: center;
+                                    margin: 25px;
+                                }">
+                                        
+                                                                  <img src="imagens/Flash.webp" alt="Batman" width="300" height="300">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9 content" id="Comentario">
+                        <h2>Comprador 1</h2>
+                        <p>Muito bom</p>
+                        <h2>Comprador 2</h2>
+                        <p>Chegou o produto</p>
+                    </div>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+        // Função para exibir o vídeo do YouTube quando a navegação "Videos" for clicada
+        document.querySelector('.Video').addEventListener('click', function () {
+            // Oculta todas as imagens
+            var content = document.querySelectorAll('.content');
+            content.forEach(function (element) {
+                element.style.display = 'none';
+            });
+
+            // Exibe o conteúdo de vídeos
+            document.getElementById('videos').style.display = 'block';
+        });
+
+        // Função para exibir a foto do Batman quando a navegação "Fotos" for clicada
+        document.querySelector('.Foto').addEventListener('click', function () {
+            // Oculta todas as imagens
+            var content = document.querySelectorAll('.content');
+            content.forEach(function (element) {
+                element.style.display = 'none';
+            });
+
+            // Exibe o conteúdo de fotos
+            document.getElementById('foto').style.display = 'block';
+        });
+        document.querySelector('.Comentario').addEventListener('click', function () {
+            
+            var content = document.querySelectorAll('.content');
+            content.forEach(function (element) {
+                element.style.display = 'none';
+            });
+
+            // Exibe o conteúdo de fotos
+            document.getElementById('Comentario').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
